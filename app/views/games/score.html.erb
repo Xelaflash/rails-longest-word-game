@@ -1,0 +1,30 @@
+<h1>Result</h1>
+<div class="container">
+   <p><%=@results%></p>
+   <br>
+   <h3>Your word is : </h3>
+   <p id="search"><%= @attempt %></p>
+   <br>
+  <p id="inject"></p>
+  <br>
+  <%= link_to "Play again", new_path %>
+</div>
+
+
+
+
+<script>
+const mot = document.getElementById("search").innerText;
+const input = document.getElementById("inject").innerHTML;
+  fetch(`https://wagon-dictionary.herokuapp.com/${mot}`)
+    .then(response => response.json())
+    .then((data) => {
+       if (data.found === true) {
+          inject.insertAdjacentHTML("beforeend", "Your word exist");
+         } else {
+          inject.insertAdjacentHTML("beforeend", "Your word doesn't exist");
+         };
+       });
+</script>
+
+
