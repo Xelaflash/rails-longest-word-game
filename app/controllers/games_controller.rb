@@ -14,7 +14,5 @@ class GamesController < ApplicationController
     else
       @results = "Sorry but #{@attempt} can't be built from #{@token_grid.join(", ")}"
     end
-
   end
-
 end
