@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def new
-    @grid = Array.new(7) { ("A".."Z").to_a.sample }
+    @grid = Array.new(15) { ("A".."Z").to_a.sample }
   end
 
 
